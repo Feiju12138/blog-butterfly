@@ -1,0 +1,606 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>【笔记】Android控件 | 绯鞠的博客</title><meta name="author" content="绯鞠"><meta name="copyright" content="绯鞠"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言Android控件学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【笔记】Android控件">
+<meta property="og:url" content="https://loli.fj.cn/2022/02/26/Android%E6%8E%A7%E4%BB%B6/index.html">
+<meta property="og:site_name" content="绯鞠的博客">
+<meta property="og:description" content="前言Android控件学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://loli.fj.cn/dist/images/avatar.jpg">
+<meta property="article:published_time" content="2022-02-26T11:14:44.000Z">
+<meta property="article:modified_time" content="2024-07-01T10:30:29.649Z">
+<meta property="article:author" content="绯鞠">
+<meta property="article:tag" content="Android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://loli.fj.cn/dist/images/avatar.jpg"><link rel="shortcut icon" href="/dist/images/favicon_package/favicon-32x32.png"><link rel="canonical" href="https://loli.fj.cn/2022/02/26/Android%E6%8E%A7%E4%BB%B6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【笔记】Android控件',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-07-01 10:30:29'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="绯鞠的博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/dist/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2807</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">114</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 更多</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/reward/"><i class="fa-fw fa fa-hand-holding-heart"></i><span> 赞助</span></a></li><li><a class="site-page child" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> 订阅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="//keep.loli.fj.cn"><i class="fa-fw fa fa-arrow-right"></i><span> 主题</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="绯鞠的博客"><img class="site-icon" src="/dist/images/avatar.gif"/><span class="site-name">绯鞠的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 更多</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/reward/"><i class="fa-fw fa fa-hand-holding-heart"></i><span> 赞助</span></a></li><li><a class="site-page child" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> 订阅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="//keep.loli.fj.cn"><i class="fa-fw fa fa-arrow-right"></i><span> 主题</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">【笔记】Android控件</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-26T11:14:44.000Z" title="发表于 2022-02-26 11:14:44">2022-02-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-01T10:30:29.649Z" title="更新于 2024-07-01 10:30:29">2024-07-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Android%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8C%97/">Android学习指北</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【笔记】Android控件"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android控件学习笔记</p>
+<span id="more"></span>
+
+<h2 id="xml头"><a href="#xml头" class="headerlink" title="xml头"></a>xml头</h2><figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:orientation</span>=<span class="string">&quot;vertical&quot;</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="TextView文本组件"><a href="#TextView文本组件" class="headerlink" title="TextView文本组件"></a>TextView文本组件</h2><h3 id="基本属性设置"><a href="#基本属性设置" class="headerlink" title="基本属性设置"></a>基本属性设置</h3><p><em>&#x2F;app&#x2F;src&#x2F;main&#x2F;res&#x2F;layout&#x2F;activity_main.xml</em></p>
+<blockquote>
+<p><code>android:layout_width=&quot;&quot;</code>：设置组件宽度<br><code>android:layout_height=&quot;&quot;</code>：设置组件高度</p>
+<blockquote>
+<p><code>match_parent</code>：根据父级容器决定尺寸<br><code>wrap_content</code>：自动决定尺寸<br><code>数字dp</code>：手动决定尺寸，dp：屏幕密度</p>
+</blockquote>
+<p><code>android:id=&quot;@+id/编号&quot;</code>：编号<br><code>android:text=&quot;&quot;</code>：设置文本内容<br><code>android:textColor=&quot;#FF000000&quot;</code>：设置文字颜色，通过argb设置<br><code>android:textStyle=&quot;&quot;</code>：设置文字风格</p>
+<blockquote>
+<p><code>bold</code>：加粗<br><code>italic</code>：斜体<br><code>normal</code>：缺省值，无效果</p>
+</blockquote>
+<p><code>android:textSize=&quot;数字sp&quot;</code>：设置文字大小<br><code>android:background=&quot;#FF000000&quot;</code>：设置背景颜色，通过argb设置<br><code>android:gravity=&quot;&quot;</code>：设置内容对齐方向</p>
+<blockquote>
+<p><code>left</code>：居左<br><code>center</code>：居中<br><code>right</code>：居右<br><code>top</code>：居顶<br><code>bottom</code>：居底</p>
+</blockquote>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="阴影设置"><a href="#阴影设置" class="headerlink" title="阴影设置"></a>阴影设置</h3><p><em>&#x2F;app&#x2F;src&#x2F;main&#x2F;res&#x2F;layout&#x2F;activity_main.xml</em></p>
+<blockquote>
+<p><code>android:shadowColor=&quot;&quot;</code>：设置阴影颜色，需要与shadowRadius一起使用<br><code>android:shadowRadius=&quot;&quot;</code>：设置模糊。建议使用3.0<br><code>android:shadowDx=&quot;&quot;</code>：设置阴影水平偏移量<br><code>android:shadowDy=&quot;&quot;</code>：设置阴影垂直偏移量</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:shadowColor</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:shadowRadius</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:shadowDx</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:shadowDy</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="跑马灯效果"><a href="#跑马灯效果" class="headerlink" title="跑马灯效果"></a>跑马灯效果</h3><p><em>&#x2F;app&#x2F;src&#x2F;main&#x2F;res&#x2F;layout&#x2F;activity_main.xml</em></p>
+<blockquote>
+<p><code>android:singleLine=&quot;true&quot;</code>：内容单行显示，防止换行<br><code>android:ellipsize=&quot;&quot;</code>：省略文本的位置</p>
+<blockquote>
+<p><code>marquee</code>：跑马灯效果<br><code>start</code>：在开始省略<br><code>end</code>：在末尾省略<br><code>middle</code>：在中间省略<br><code>none</code>：缺省值，超出部分不省略</p>
+</blockquote>
+<p><code>android:marqueeRepeatLimit=&quot;&quot;</code>：重复次数</p>
+<blockquote>
+<p><code>marquee_forever</code>：一直重复</p>
+</blockquote>
+<p><code>android:focusable=&quot;true&quot;</code>：允许获取焦点<br><code>android:focusableInTouchMode=&quot;true&quot;</code>：触摸模式下允许获取焦点</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:singleLine</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:ellipsize</span>=<span class="string">&quot;marquee&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:marqueeRepeatLimit</span>=<span class="string">&quot;marquee_forever&quot;</span></span></span><br><span class="line"><span class="tag">    </span></span><br><span class="line"><span class="tag">    <span class="attr">android:focusable</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:focusableInTouchMode</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="通过Java设置控件属性"><a href="#通过Java设置控件属性" class="headerlink" title="通过Java设置控件属性"></a>通过Java设置控件属性</h3><p><em>&#x2F;app&#x2F;src&#x2F;main&#x2F;java&#x2F;…&#x2F;MainActivity.java</em></p>
+<h4 id="通过id获取控件对象"><a href="#通过id获取控件对象" class="headerlink" title="通过id获取控件对象"></a>通过id获取控件对象</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">TextView</span> <span class="variable">textView</span> <span class="operator">=</span> findViewById(R.id.编号);</span><br></pre></td></tr></table></figure>
+
+<h4 id="通过Java对象设置属性"><a href="#通过Java对象设置属性" class="headerlink" title="通过Java对象设置属性"></a>通过Java对象设置属性</h4><ul>
+<li>Java设置的属性会覆盖标签的属性</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">textView.setText(<span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用常量池中字符串的常量"><a href="#使用常量池中字符串的常量" class="headerlink" title="使用常量池中字符串的常量"></a>使用常量池中字符串的常量</h3><h4 id="添加字符串常量"><a href="#添加字符串常量" class="headerlink" title="添加字符串常量"></a>添加字符串常量</h4><figure class="highlight xml"><figcaption><span>/app/src/main/res/values/strings.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">&quot;键&quot;</span>&gt;</span>值<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="使用字符串常量"><a href="#使用字符串常量" class="headerlink" title="使用字符串常量"></a>使用字符串常量</h4><figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:text</span>=<span class="string">&quot;@string/键&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用常量池中颜色的常量"><a href="#使用常量池中颜色的常量" class="headerlink" title="使用常量池中颜色的常量"></a>使用常量池中颜色的常量</h3><h4 id="添加颜色常量"><a href="#添加颜色常量" class="headerlink" title="添加颜色常量"></a>添加颜色常量</h4><figure class="highlight xml"><figcaption><span>/app/src/main/res/values/colors.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot;pink&quot;</span>&gt;</span>#FFFC94AF<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="使用颜色常量"><a href="#使用颜色常量" class="headerlink" title="使用颜色常量"></a>使用颜色常量</h4><figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:textColor</span>=<span class="string">&quot;@color/pink&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Button按钮组件"><a href="#Button按钮组件" class="headerlink" title="Button按钮组件"></a>Button按钮组件</h2><ul>
+<li>Button继承自TextView，所以TextView拥有的属性Button也同样拥有</li>
+</ul>
+<figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h3><ul>
+<li>旧版本gradle会出现修改按钮颜色失效的问题</li>
+</ul>
+<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h4><ul>
+<li>把<code>/app/src/main/res/values/themes.xml</code>文件中的<br><code>Theme.MaterialComponents.DayNight.DarkActionBar</code><br>改为<br><code>Theme.MaterialComponents.DayNight.DarkActionBar.Bridge</code></li>
+</ul>
+<h3 id="按下Button实现不同的背景色"><a href="#按下Button实现不同的背景色" class="headerlink" title="按下Button实现不同的背景色"></a>按下Button实现不同的背景色</h3><h4 id="创建一个图片选择器"><a href="#创建一个图片选择器" class="headerlink" title="创建一个图片选择器"></a>创建一个图片选择器</h4><ul>
+<li>在<code>/app/src/main/res/drawable</code>目录下创建一个<code>Drawable Resource File</code>文件</li>
+<li>在<code>/app/src/main/res/drawable</code>目录下添加xml格式的图片</li>
+</ul>
+<p>右键res目录-&gt;<code>New</code>-&gt;<code>Vector Assset</code></p>
+<ul>
+<li>有<code>android:state_pressed=&quot;true&quot;</code>标记的标签是点击后的图片</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">&quot;@drawable/ic_like&quot;</span> <span class="attr">android:state_pressed</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">&quot;@drawable/ic_sugar&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="踩坑-1"><a href="#踩坑-1" class="headerlink" title="踩坑"></a>踩坑</h5><ul>
+<li>在<code>/app/src/main/res/drawable/btn_selector.xml</code>文件中，应该先写变化后的item，后写还原后的item，不可以改变顺序</li>
+</ul>
+<h4 id="使用图片选择器"><a href="#使用图片选择器" class="headerlink" title="使用图片选择器"></a>使用图片选择器</h4><figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:background</span>=<span class="string">&quot;@drawable/btn_selector&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="按钮事件"><a href="#按钮事件" class="headerlink" title="按钮事件"></a>按钮事件</h3><h4 id="通过XML设置按钮事件"><a href="#通过XML设置按钮事件" class="headerlink" title="通过XML设置按钮事件"></a>通过XML设置按钮事件</h4><h5 id="点击事件"><a href="#点击事件" class="headerlink" title="点击事件"></a>点击事件</h5><blockquote>
+<p><code>click</code>：对应java方法名</p>
+</blockquote>
+<figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:onClick</span>=<span class="string">&quot;click&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">click</span><span class="params">(View view)</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="通过Java设置按钮事件"><a href="#通过Java设置按钮事件" class="headerlink" title="通过Java设置按钮事件"></a>通过Java设置按钮事件</h4><ul>
+<li>通过Java获取组件对象</li>
+</ul>
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Button</span> <span class="variable">btn</span> <span class="operator">=</span> findViewById(R.id.btn);</span><br></pre></td></tr></table></figure>
+
+<h5 id="点击事件-1"><a href="#点击事件-1" class="headerlink" title="点击事件"></a>点击事件</h5><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">btn.setOnClickListener(<span class="keyword">new</span> <span class="title class_">View</span>.OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(View view)</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="长按事件"><a href="#长按事件" class="headerlink" title="长按事件"></a>长按事件</h5><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">btn.setOnLongClickListener(<span class="keyword">new</span> <span class="title class_">View</span>.OnLongClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">onLongClick</span><span class="params">(View view)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a>触摸事件</h5><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">btn.setOnTouchListener(<span class="keyword">new</span> <span class="title class_">View</span>.OnTouchListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h6 id="触摸的具体操作"><a href="#触摸的具体操作" class="headerlink" title="触摸的具体操作"></a>触摸的具体操作</h6><blockquote>
+<p><code>motionEvent.getAction()</code>：获取触摸的具体操作</p>
+<blockquote>
+<p><code>0</code>：down按下<br><code>2</code>：move在按下后移动<br><code>1</code>：on松手</p>
+</blockquote>
+</blockquote>
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">btn.setOnTouchListener(<span class="keyword">new</span> <span class="title class_">View</span>.OnTouchListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">onTouch</span><span class="params">(View view, MotionEvent motionEvent)</span> &#123;</span><br><span class="line">        System.out.println(motionEvent.getAction());</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="打印日志"><a href="#打印日志" class="headerlink" title="打印日志"></a>打印日志</h5><blockquote>
+<p><code>TAG</code>：表示标记的常量<br><code>&lt;str&gt;</code>：日志内容字符串</p>
+</blockquote>
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Log.e(TAG, &lt;str&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="EditText表单组件"><a href="#EditText表单组件" class="headerlink" title="EditText表单组件"></a>EditText表单组件</h2><ul>
+<li>EditText继承自TextView，所以TextView拥有的属性EditText也同样拥有</li>
+</ul>
+<blockquote>
+<p><code>android:hint=&quot;&quot;</code>：输入框提示文字<br><code>android:textColorHint=&quot;&quot;</code>：提示文字颜色<br><code>android:inputType=&quot;&quot;</code>：输入框类型</p>
+<blockquote>
+<p><code>text</code>：文本<br><code>number</code>：数字，只弹出数字输入法<br><code>phone</code>：电话，只弹出数字输入法<br><code>textPassword</code>：文本密码<br><code>numberPassword</code>：数字密码</p>
+</blockquote>
+<p><code>android:drawableLeft=&quot;&quot;</code>：在左侧添加图标<br><code>android:drawableRight=&quot;&quot;</code>：在右侧添加图标<br><code>android:drawableTop=&quot;&quot;</code>：在顶部添加图标<br><code>android:drawableBottom=&quot;&quot;</code>：在底部添加图标<br><code>android:drawablePadding=&quot;&quot;</code>：图片与输入框的间距</p>
+</blockquote>
+<blockquote>
+<p><code>android:padding=&quot;&quot;</code>：输入框与外框四周的内边距<br><code>android:paddingLeft=&quot;&quot;</code>：输入框与外框左侧的内边距<br><code>android:paddingRight=&quot;&quot;</code>：输入框与外框右侧的内边距<br><code>android:paddingTop=&quot;&quot;</code>：输入框与外框顶部的内边距<br><code>android:paddingBottom=&quot;&quot;</code>：输入框与外框顶部的内边距</p>
+</blockquote>
+<figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">EditText</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获取输入框内容"><a href="#获取输入框内容" class="headerlink" title="获取输入框内容"></a>获取输入框内容</h3><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">EditText</span> <span class="variable">editText</span> <span class="operator">=</span> findViewById(R.id.et);</span><br><span class="line">editText.getText().toString();</span><br></pre></td></tr></table></figure>
+
+<h2 id="ImageView图片组件"><a href="#ImageView图片组件" class="headerlink" title="ImageView图片组件"></a>ImageView图片组件</h2><ul>
+<li>图片资源放在<code>/app/src/main/res/drawable</code></li>
+</ul>
+<blockquote>
+<p><code>android:src=&quot;&quot;</code>：图片路径<br><code>android:scaleType=&quot;&quot;</code>：图片缩放类型</p>
+<blockquote>
+<p><code>fitCenter</code>：缺省值，保持宽高比缩放图片，直到较长的边与Image的边长相等，缩放完成后将图片放在ImageView的中间<br><code>fitStart</code>：保持宽高比缩放图片，直到较长的边与Image的边长相等，缩放完成后将图片放在ImageView的左上角<br><code>fitEnd</code>：保持宽高比缩放图片，直到较长的边与Image的边长相等，缩放完成后将图片放在ImageView的右下角<br><code>fitXY</code>：强制缩放到满，有可能不等比例<br><code>center</code>：保持原图大小，显示在ImageView的中心，如果原图过大，可能会被裁剪<br><code>centerCrop</code>：等比例缩放到满，显示在ImageView的中心，如果原图不等比例，可能会被裁减<br><code>centerInside</code>：等比例缩放到满，显示在ImageView的中心，不会被裁剪<br><code>matrix</code>：保持原图大小，显示在ImageView的左上角，如果原图过大，可能会被裁剪</p>
+</blockquote>
+<p><code>android:maxWidth=&quot;&quot;</code>：最大宽度<br><code>android:maxHeight=&quot;&quot;</code>：最大高度<br><code>android:minWidth=&quot;&quot;</code>：最小宽度<br><code>android:minHeight=&quot;&quot;</code>：最小高度<br><code>android:adjustViewBounds=&quot;&quot;</code>：根据最大宽高，自动调整View的界限为图片宽高</p>
+</blockquote>
+<figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ProgressBar进度条"><a href="#ProgressBar进度条" class="headerlink" title="ProgressBar进度条"></a>ProgressBar进度条</h2><blockquote>
+<p><code>style=&quot;?android:attr/progressBarStyleHorizontal&quot;</code>：改为水平进度条<br><code>android:max=&quot;&quot;</code>：进度条最大值<br><code>android:progress=&quot;&quot;</code>：进度条已完成进度<br><code>android:indeterminate=&quot;true&quot;</code>：进度条不显示进度</p>
+</blockquote>
+<figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ProgressBar</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="改变进度条状态"><a href="#改变进度条状态" class="headerlink" title="改变进度条状态"></a>改变进度条状态</h3><h4 id="获取进度条对象"><a href="#获取进度条对象" class="headerlink" title="获取进度条对象"></a>获取进度条对象</h4><figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ProgressBar</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:id</span>=<span class="string">&quot;@+id/pb&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ProgressBar</span> <span class="variable">progressBar</span> <span class="operator">=</span> findViewById(R.id.pb);</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看当前进度条状态"><a href="#查看当前进度条状态" class="headerlink" title="查看当前进度条状态"></a>查看当前进度条状态</h4><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">progressBar.getVisibility();</span><br></pre></td></tr></table></figure>
+
+<h4 id="改为隐藏"><a href="#改为隐藏" class="headerlink" title="改为隐藏"></a>改为隐藏</h4><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">progressBar.setVisibility(View.GONE);</span><br></pre></td></tr></table></figure>
+
+<h4 id="改为显示"><a href="#改为显示" class="headerlink" title="改为显示"></a>改为显示</h4><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">progressBar.setVisibility(View.VISIBLE);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Notification通知"><a href="#Notification通知" class="headerlink" title="Notification通知"></a>Notification通知</h2><h3 id="发送通知"><a href="#发送通知" class="headerlink" title="发送通知"></a>发送通知</h3><blockquote>
+<p><code>&lt;id&gt;</code>：设置一个id，前后id需保持一致<br><code>&lt;msg&gt;</code>：通知名称<br><code>&lt;level&gt;</code>：通知的重要程度<br><code>.&lt;init&gt;</code>：通过链式结构配置通知</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><code>&lt;level&gt;</code></th>
+<th>是否开启通知</th>
+<th>是否弹出</th>
+<th>是否有提示音</th>
+<th>是否状态栏中显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>NotificationManager.IMPORTANCE_NONE</code></td>
+<td>×</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>NotificationManager.IMPORTANCE_MIN</code></td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td><code>NotificationManager.IMPORTANCE_LOW</code></td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+</tr>
+<tr>
+<td><code>NotificationManager.IMPORTANCE_DEFAULT</code></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td><code>NotificationManager.IMPORTANCE_HIGH</code></td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><code>.&lt;init&gt;</code></th>
+<th>是否必选</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.setContentTitle(&quot;&quot;)</code></td>
+<td>必选</td>
+<td>设置标题</td>
+</tr>
+<tr>
+<td><code>.setContentText(&quot;&quot;)</code></td>
+<td>必选</td>
+<td>设置内容</td>
+</tr>
+<tr>
+<td><code>.setSmallIcon(R.drawable.ic_图片名)</code></td>
+<td>必选</td>
+<td>设置小图标，必须为alpha图层，不可以包含RGB图层</td>
+</tr>
+<tr>
+<td><code>.setColor()</code></td>
+<td>可选</td>
+<td>设置小图标的颜色</td>
+</tr>
+<tr>
+<td><code>.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_图片名))</code></td>
+<td>可选</td>
+<td>设置大图标</td>
+</tr>
+<tr>
+<td><code>.setContentIntent()</code></td>
+<td>可选</td>
+<td>设置点击通知的跳转意图</td>
+</tr>
+<tr>
+<td><code>.setAutoCancel(true)</code></td>
+<td>可选</td>
+<td>设置点击后自动清除</td>
+</tr>
+<tr>
+<td><code>.setWhen()</code></td>
+<td>可选</td>
+<td>设置通知创建时间，默认为当前时间</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通知管理器</span></span><br><span class="line"><span class="type">NotificationManager</span> <span class="variable">notificationManager</span> <span class="operator">=</span> (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</span><br><span class="line"><span class="comment">// 判断系统版本是否大于8.0，为大于8.0版本的程序添加通知渠道</span></span><br><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) &#123;</span><br><span class="line">    <span class="type">NotificationChannel</span> <span class="variable">notificationChannel</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NotificationChannel</span>(<span class="string">&quot;&lt;id&gt;&quot;</span>, <span class="string">&quot;&lt;msg&gt;&quot;</span>, &lt;level&gt;);</span><br><span class="line">    notificationManager.createNotificationChannel(notificationChannel);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 创建通知</span></span><br><span class="line"><span class="type">Notification</span> <span class="variable">notification</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NotificationCompat</span>.Builder(<span class="built_in">this</span>, <span class="string">&quot;&lt;id&gt;&quot;</span>)</span><br><span class="line">        .setContentTitle(<span class="string">&quot;&quot;</span>)</span><br><span class="line">        .setContentText(<span class="string">&quot;&quot;</span>)</span><br><span class="line">        .setSmallIcon(R.drawable.ic_)</span><br><span class="line">        .&lt;init&gt;</span><br><span class="line">        .build();</span><br><span class="line"><span class="comment">// 发送通知</span></span><br><span class="line">notificationManager.notify(<span class="number">1</span>, notification);</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加通知的意图"><a href="#添加通知的意图" class="headerlink" title="添加通知的意图"></a>添加通知的意图</h4><h5 id="创建一个Activity类"><a href="#创建一个Activity类" class="headerlink" title="创建一个Activity类"></a>创建一个Activity类</h5><ul>
+<li>创建一个<code>NotificationActivity</code>类，继承<code>Activity</code>类，并实现<code>onCreate()</code>方法</li>
+</ul>
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../NotificationActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">NotificationActivity</span> <span class="keyword">extends</span> <span class="title class_">Activity</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(<span class="meta">@Nullable</span> Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        <span class="comment">// 添加意图</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="注册Activity"><a href="#注册Activity" class="headerlink" title="注册Activity"></a>注册Activity</h5><figure class="highlight xml"><figcaption><span>/app/src/main/AndroidManifest.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">  &lt;<span class="attr">activity</span> <span class="attr">android:name</span>=<span class="string">&quot;.NotificationActivity&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="为通知添加意图"><a href="#为通知添加意图" class="headerlink" title="为通知添加意图"></a>为通知添加意图</h5><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通知管理器</span></span><br><span class="line"><span class="type">NotificationManager</span> <span class="variable">notificationManager</span> <span class="operator">=</span> (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</span><br><span class="line"><span class="comment">// 判断系统版本是否大于8.0，为大于8.0版本的程序添加通知渠道</span></span><br><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) &#123;</span><br><span class="line">    <span class="type">NotificationChannel</span> <span class="variable">notificationChannel</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NotificationChannel</span>(<span class="string">&quot;&lt;id&gt;&quot;</span>, <span class="string">&quot;&lt;msg&gt;&quot;</span>, &lt;level&gt;);</span><br><span class="line">    notificationManager.createNotificationChannel(notificationChannel);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(<span class="built_in">this</span>, NotificationActivity.class);</span><br><span class="line"><span class="type">PendingIntent</span> <span class="variable">pendingIntent</span> <span class="operator">=</span> PendingIntent.getActivity(<span class="built_in">this</span>, <span class="number">0</span>, intent, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// 创建通知</span></span><br><span class="line"><span class="type">Notification</span> <span class="variable">notification</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NotificationCompat</span>.Builder(<span class="built_in">this</span>, <span class="string">&quot;&lt;id&gt;&quot;</span>)</span><br><span class="line">        .setContentTitle(<span class="string">&quot;&quot;</span>)</span><br><span class="line">        .setContentText(<span class="string">&quot;&quot;</span>)</span><br><span class="line">        .setSmallIcon(R.drawable.ic_)</span><br><span class="line">        .setContentIntent(pendingIntent) <span class="comment">// 添加意图</span></span><br><span class="line">        .setAutoCancel(<span class="literal">true</span>) <span class="comment">// 点击后自动清除</span></span><br><span class="line">        .build();</span><br><span class="line"><span class="comment">// 发送通知</span></span><br><span class="line">notificationManager.notify(<span class="number">1</span>, notification);</span><br></pre></td></tr></table></figure>
+
+<h3 id="取消通知"><a href="#取消通知" class="headerlink" title="取消通知"></a>取消通知</h3><p><em>&#x2F;app&#x2F;src&#x2F;main&#x2F;java&#x2F;…&#x2F;MainActivity.java</em></p>
+<blockquote>
+<p><code>1</code>：这个id需要与上面发起通知时的id保持相同</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">notificationManager.cancel(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="ToolBar导航栏"><a href="#ToolBar导航栏" class="headerlink" title="ToolBar导航栏"></a>ToolBar导航栏</h2><ul>
+<li>通过替换ActionBar为ToolBar，实现自定义导航栏</li>
+</ul>
+<h3 id="清除自带的ActionBar"><a href="#清除自带的ActionBar" class="headerlink" title="清除自带的ActionBar"></a>清除自带的ActionBar</h3><ul>
+<li>将<code>/app/src/main/res/values/themes.xml</code>文件的<code>Theme.MaterialComponents.DayNight.DarkActionBar</code>改为<code>Theme.MaterialComponents.DayNight.NoActionBar</code></li>
+</ul>
+<h3 id="添加ToolBar"><a href="#添加ToolBar" class="headerlink" title="添加ToolBar"></a>添加ToolBar</h3><blockquote>
+<p><code>app:navigationIcon=&quot;@drawable/ic_图片名&quot;</code>：导航栏图标，通常设置成返回的图标<br><code>app:title=&quot;&quot;</code>：标题<br><code>app:titleTextColor=&quot;&quot;</code>：标题文字颜色<br><code>app:titleMarginStart=&quot;&quot;</code>：标题左外间距<br><code>app:titleMarginEnd=&quot;&quot;</code>：标题右外间距<br><code>app:titleMarginBottom=&quot;&quot;</code>：标题下外间距<br><code>app:subtitle=&quot;&quot;</code>：副标题<br><code>app:subtitleTextColor=&quot;&quot;</code>：副标题文字颜色<br><code>app:logo=&quot;@drawable/ic_图片名&quot;</code>：软件在导航栏的图标</p>
+</blockquote>
+<figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">androidx.appcompat.widget.Toolbar</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;?attr/actionBarSize&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="点击效果"><a href="#点击效果" class="headerlink" title="点击效果"></a>点击效果</h4><figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">androidx.appcompat.widget.Toolbar</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/tb&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;?attr/actionBarSize&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Toolbar</span> <span class="variable">toolbar</span> <span class="operator">=</span> findViewById(R.id.tb);</span><br><span class="line">toolbar.setNavigationOnClickListener(<span class="keyword">new</span> <span class="title class_">View</span>.OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(View view)</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置居中的标题"><a href="#设置居中的标题" class="headerlink" title="设置居中的标题"></a>设置居中的标题</h4><figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">androidx.appcompat.widget.Toolbar</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">&quot;?attr/actionBarSize&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_gravity</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:text</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">androidx.appcompat.widget.Toolbar</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="AlertDialog对话框"><a href="#AlertDialog对话框" class="headerlink" title="AlertDialog对话框"></a>AlertDialog对话框</h2><blockquote>
+<p><code>.setIcon(R.drawable.ic_图片名)</code>：设置对话框图标<br><code>.setTitle(&quot;&quot;)</code>：设置对话框标题<br><code>.setMessage(&quot;&quot;)</code>：设置对话框内容</p>
+</blockquote>
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">AlertDialog.<span class="type">Builder</span> <span class="variable">alertDialogBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AlertDialog</span>.Builder(<span class="built_in">this</span>);</span><br><span class="line">alertDialogBuilder</span><br><span class="line">        .setIcon(R.drawable.ic_)</span><br><span class="line">        .setTitle(<span class="string">&quot;&quot;</span>)</span><br><span class="line">        .setMessage(<span class="string">&quot;&quot;</span>)</span><br><span class="line">        .create() <span class="comment">// 创建对话框</span></span><br><span class="line">        .show(); <span class="comment">// 显示对话框</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="添加按钮"><a href="#添加按钮" class="headerlink" title="添加按钮"></a>添加按钮</h3><h4 id="添加左下角按钮"><a href="#添加左下角按钮" class="headerlink" title="添加左下角按钮"></a>添加左下角按钮</h4><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AlertDialog.<span class="type">Builder</span> <span class="variable">alertDialogBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AlertDialog</span>.Builder(<span class="built_in">this</span>);</span><br><span class="line">alertDialogBuilder</span><br><span class="line">        .setNeutralButton(<span class="string">&quot;跳过&quot;</span>, <span class="keyword">new</span> <span class="title class_">DialogInterface</span>.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(DialogInterface dialogInterface, <span class="type">int</span> i)</span> &#123;</span><br><span class="line">  </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .create() <span class="comment">// 创建对话框</span></span><br><span class="line">        .show(); <span class="comment">// 显示对话框</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="添加右下角左侧按钮"><a href="#添加右下角左侧按钮" class="headerlink" title="添加右下角左侧按钮"></a>添加右下角左侧按钮</h4><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AlertDialog.<span class="type">Builder</span> <span class="variable">alertDialogBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AlertDialog</span>.Builder(<span class="built_in">this</span>);</span><br><span class="line">alertDialogBuilder</span><br><span class="line">        .setNegativeButton(<span class="string">&quot;取消&quot;</span>, <span class="keyword">new</span> <span class="title class_">DialogInterface</span>.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(DialogInterface dialogInterface, <span class="type">int</span> i)</span> &#123;</span><br><span class="line">  </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .create() <span class="comment">// 创建对话框</span></span><br><span class="line">        .show(); <span class="comment">// 显示对话框</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="添加右下角右侧按钮"><a href="#添加右下角右侧按钮" class="headerlink" title="添加右下角右侧按钮"></a>添加右下角右侧按钮</h4><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AlertDialog.<span class="type">Builder</span> <span class="variable">alertDialogBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AlertDialog</span>.Builder(<span class="built_in">this</span>);</span><br><span class="line">alertDialogBuilder</span><br><span class="line">        .setPositiveButton(<span class="string">&quot;确定&quot;</span>, <span class="keyword">new</span> <span class="title class_">DialogInterface</span>.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(DialogInterface dialogInterface, <span class="type">int</span> i)</span> &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .create() <span class="comment">// 创建对话框</span></span><br><span class="line">        .show(); <span class="comment">// 显示对话框</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="添加布局"><a href="#添加布局" class="headerlink" title="添加布局"></a>添加布局</h3><h4 id="创建一个布局"><a href="#创建一个布局" class="headerlink" title="创建一个布局"></a>创建一个布局</h4><ul>
+<li>在<code>/app/src/main/res/layout/</code>目录下创建一个<code>dialog\_view.xml</code></li>
+</ul>
+<figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:orientation</span>=<span class="string">&quot;horizontal&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="将dialog-view-xml布局放到对话框"><a href="#将dialog-view-xml布局放到对话框" class="headerlink" title="将dialog_view.xml布局放到对话框"></a>将dialog_view.xml布局放到对话框</h4><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AlertDialog.<span class="type">Builder</span> <span class="variable">alertDialogBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AlertDialog</span>.Builder(<span class="built_in">this</span>);</span><br><span class="line">alertDialogBuilder</span><br><span class="line">        .setView(getLayoutInflater().inflate(R.layout.dialog_view, <span class="literal">null</span>))</span><br><span class="line">        .create() <span class="comment">// 创建对话框</span></span><br><span class="line">        .show(); <span class="comment">// 显示对话框</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="PopupWindow弹出窗口"><a href="#PopupWindow弹出窗口" class="headerlink" title="PopupWindow弹出窗口"></a>PopupWindow弹出窗口</h2><h3 id="创建一个布局用来弹出"><a href="#创建一个布局用来弹出" class="headerlink" title="创建一个布局用来弹出"></a>创建一个布局用来弹出</h3><ul>
+<li>在<code>/app/src/main/res/layout/</code>目录下创建一个<code>popup\_view.xml</code>布局文件用来测试</li>
+</ul>
+<figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/popup_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">&quot;200dp&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">&quot;200dp&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:orientation</span>=<span class="string">&quot;vertical&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:background</span>=<span class="string">&quot;@mipmap/ic_launcher&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建一个按钮用来弹出窗口"><a href="#创建一个按钮用来弹出窗口" class="headerlink" title="创建一个按钮用来弹出窗口"></a>创建一个按钮用来弹出窗口</h3><figure class="highlight xml"><figcaption><span>/app/src/main/res/layout/activity_main.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:onClick</span>=<span class="string">&quot;click&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建PopupWindow"><a href="#创建PopupWindow" class="headerlink" title="创建PopupWindow"></a>创建PopupWindow</h3><h4 id="窗口无偏移，显示在正下方"><a href="#窗口无偏移，显示在正下方" class="headerlink" title="窗口无偏移，显示在正下方"></a>窗口无偏移，显示在正下方</h4><ul>
+<li>在click方法中，创建PopupWindow，在按钮下方弹出次</li>
+</ul>
+<p>既可以使用构造方法初始化窗口，也可以使用无参构造创建对象后，再使用set方法进行初始化</p>
+<blockquote>
+<p><code>getLayoutInflater().inflate(R.layout.popup_view, null)</code>：设置弹出窗口的布局<br><code>ViewGroup.LayoutParams.WRAP_CONTENT</code>：将弹出窗口的宽高都设置为自动<code>wrap_content</code>。如果需要手动设置，可以直接传递宽高</p>
+</blockquote>
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">click</span><span class="params">(View view)</span> &#123;</span><br><span class="line">    <span class="type">PopupWindow</span> <span class="variable">popupWindow</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PopupWindow</span>(getLayoutInflater().inflate(R.layout.popup_view, <span class="literal">null</span>), ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);</span><br><span class="line">    popupWindow.showAsDropDown(view);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="窗口有偏移"><a href="#窗口有偏移" class="headerlink" title="窗口有偏移"></a>窗口有偏移</h4><p><em>&#x2F;app&#x2F;src&#x2F;main&#x2F;java&#x2F;…&#x2F;MainActivity.java</em></p>
+<blockquote>
+<p><code>&lt;x&gt;</code>：水平偏移量<br><code>&lt;y&gt;</code>：垂直偏移量</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">click</span><span class="params">(View view)</span> &#123;</span><br><span class="line">    <span class="type">PopupWindow</span> <span class="variable">popupWindow</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PopupWindow</span>(getLayoutInflater().inflate(R.layout.popup_view, <span class="literal">null</span>), ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);</span><br><span class="line">    popupWindow.showAsDropDown(view, &lt;x&gt;, &lt;y&gt;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="点击空白处隐藏"><a href="#点击空白处隐藏" class="headerlink" title="点击空白处隐藏"></a>点击空白处隐藏</h4><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">click</span><span class="params">(View view)</span> &#123;</span><br><span class="line">    <span class="type">PopupWindow</span> <span class="variable">popupWindow</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PopupWindow</span>(getLayoutInflater().inflate(R.layout.popup_view, <span class="literal">null</span>), ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, <span class="literal">true</span>);</span><br><span class="line">    popupWindow.showAsDropDown(view);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="关闭PopupWindow"><a href="#关闭PopupWindow" class="headerlink" title="关闭PopupWindow"></a>关闭PopupWindow</h3><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">popupWindow.dismiss();</span><br></pre></td></tr></table></figure>
+
+<h3 id="点击空白处隐藏-1"><a href="#点击空白处隐藏-1" class="headerlink" title="点击空白处隐藏"></a>点击空白处隐藏</h3><figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">popupWindow.setFocusable(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置背景"><a href="#设置背景" class="headerlink" title="设置背景"></a>设置背景</h3><ul>
+<li>设置背景需要在显示之前</li>
+</ul>
+<figure class="highlight java"><figcaption><span>/app/src/main/java/.../MainActivity.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_图片名));</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="/302.html?target=https://www.bilibili.com/video/BV13y4y1E7pF">哔哩哔哩——Android架构解析</a></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Android/">Android</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="wxp://f2f0NKAEBnugPKw0admZMt7DHc3KmIzanXv5sLa2hLIr0RhV33hxzL8A88SNAiFt8lJn" target="_blank"><img class="post-qr-code-img" src="/dist/images/reward/images/wxpay.png" alt="微信支付"/></a><div class="post-qr-code-desc">微信支付</div></li><li class="reward-item"><a href="https://qr.alipay.com/fkx15760bja9yaagobntrcf" target="_blank"><img class="post-qr-code-img" src="/dist/images/reward/images/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&amp;f=wallet&amp;a=1&amp;ac=CAEQ3774rgMYq778ngZCIGNlMDA1YzNjMDhiZTQyMmEyN2RkMjU1ZTE4NGU3YTQ1_xxx_sign&amp;u=903749471&amp;n=%E2%80%8E" target="_blank"><img class="post-qr-code-img" src="/dist/images/reward/images/qqpay.png" alt="QQ支付"/></a><div class="post-qr-code-desc">QQ支付</div></li><li class="reward-item"><a href="/bc1p2anzknthp9597nnhq883tfy5pmsasukglp8e9xn4ehv8l3s75vjs4082h4" target="_blank"><img class="post-qr-code-img" src="/dist/images/reward/images/bitcoin.png" alt="比特币"/></a><div class="post-qr-code-desc">比特币</div></li><li class="reward-item"><a href="/1.3922899487204236e+48" target="_blank"><img class="post-qr-code-img" src="/dist/images/reward/images/ethereum.png" alt="以太币"/></a><div class="post-qr-code-desc">以太币</div></li><li class="reward-item"><a href="/4AaDtjKpgj43ZBC724LjFHZ6Tgx4sxqyr3iraxbLkzEPVNQQ24QtTQr6i18pzWnGKTbXkx5eZyUqMazTvPkjPcZSPmmNHt3" target="_blank"><img class="post-qr-code-img" src="/dist/images/reward/images/monero.png" alt="门罗币"/></a><div class="post-qr-code-desc">门罗币</div></li><li class="reward-item"><a href="https://www.paypal.com/paypalme/lolifjcn" target="_blank"><img class="post-qr-code-img" src="/dist/images/reward/images/paypal.png" alt="贝宝"/></a><div class="post-qr-code-desc">贝宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/02/Android%E5%B8%83%E5%B1%80/" title="【笔记】Android布局"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【笔记】Android布局</div></div></a></div><div class="next-post pull-right"><a href="/2022/02/25/Android%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/" title="【笔记】Android项目结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【笔记】Android项目结构</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/dist/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">绯鞠</div><div class="author-info__description">捕捉一只爱折腾的绯鞠</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2807</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">114</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:00-isomer-cabbies@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://t.me/lolifjcn" target="_blank" title="Telegram"><i class="fab fa-telegram" style="color: #000000;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xml%E5%A4%B4"><span class="toc-number">2.</span> <span class="toc-text">xml头</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TextView%E6%96%87%E6%9C%AC%E7%BB%84%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">TextView文本组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.1.</span> <span class="toc-text">基本属性设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B4%E5%BD%B1%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.2.</span> <span class="toc-text">阴影设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%91%E9%A9%AC%E7%81%AF%E6%95%88%E6%9E%9C"><span class="toc-number">3.3.</span> <span class="toc-text">跑马灯效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Java%E8%AE%BE%E7%BD%AE%E6%8E%A7%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="toc-number">3.4.</span> <span class="toc-text">通过Java设置控件属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87id%E8%8E%B7%E5%8F%96%E6%8E%A7%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.4.1.</span> <span class="toc-text">通过id获取控件对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Java%E5%AF%B9%E8%B1%A1%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7"><span class="toc-number">3.4.2.</span> <span class="toc-text">通过Java对象设置属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%B8%B8%E9%87%8F%E6%B1%A0%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E9%87%8F"><span class="toc-number">3.5.</span> <span class="toc-text">使用常量池中字符串的常量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F"><span class="toc-number">3.5.1.</span> <span class="toc-text">添加字符串常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F"><span class="toc-number">3.5.2.</span> <span class="toc-text">使用字符串常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%B8%B8%E9%87%8F%E6%B1%A0%E4%B8%AD%E9%A2%9C%E8%89%B2%E7%9A%84%E5%B8%B8%E9%87%8F"><span class="toc-number">3.6.</span> <span class="toc-text">使用常量池中颜色的常量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E9%A2%9C%E8%89%B2%E5%B8%B8%E9%87%8F"><span class="toc-number">3.6.1.</span> <span class="toc-text">添加颜色常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%A2%9C%E8%89%B2%E5%B8%B8%E9%87%8F"><span class="toc-number">3.6.2.</span> <span class="toc-text">使用颜色常量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Button%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">Button按钮组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B8%A9%E5%9D%91"><span class="toc-number">4.1.</span> <span class="toc-text">踩坑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98"><span class="toc-number">4.1.1.</span> <span class="toc-text">解决问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E4%B8%8BButton%E5%AE%9E%E7%8E%B0%E4%B8%8D%E5%90%8C%E7%9A%84%E8%83%8C%E6%99%AF%E8%89%B2"><span class="toc-number">4.2.</span> <span class="toc-text">按下Button实现不同的背景色</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9B%BE%E7%89%87%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">4.2.1.</span> <span class="toc-text">创建一个图片选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B8%A9%E5%9D%91-1"><span class="toc-number">4.2.1.1.</span> <span class="toc-text">踩坑</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">4.2.2.</span> <span class="toc-text">使用图片选择器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.3.</span> <span class="toc-text">按钮事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87XML%E8%AE%BE%E7%BD%AE%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.3.1.</span> <span class="toc-text">通过XML设置按钮事件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">点击事件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Java%E8%AE%BE%E7%BD%AE%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.3.2.</span> <span class="toc-text">通过Java设置按钮事件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6-1"><span class="toc-number">4.3.2.1.</span> <span class="toc-text">点击事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%95%BF%E6%8C%89%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.3.2.2.</span> <span class="toc-text">长按事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.3.2.3.</span> <span class="toc-text">触摸事件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%A7%A6%E6%91%B8%E7%9A%84%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="toc-number">4.3.2.3.1.</span> <span class="toc-text">触摸的具体操作</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E6%97%A5%E5%BF%97"><span class="toc-number">4.3.2.4.</span> <span class="toc-text">打印日志</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EditText%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">EditText表单组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%BE%93%E5%85%A5%E6%A1%86%E5%86%85%E5%AE%B9"><span class="toc-number">5.1.</span> <span class="toc-text">获取输入框内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ImageView%E5%9B%BE%E7%89%87%E7%BB%84%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">ImageView图片组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ProgressBar%E8%BF%9B%E5%BA%A6%E6%9D%A1"><span class="toc-number">7.</span> <span class="toc-text">ProgressBar进度条</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E5%8F%98%E8%BF%9B%E5%BA%A6%E6%9D%A1%E7%8A%B6%E6%80%81"><span class="toc-number">7.1.</span> <span class="toc-text">改变进度条状态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%AF%B9%E8%B1%A1"><span class="toc-number">7.1.1.</span> <span class="toc-text">获取进度条对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E8%BF%9B%E5%BA%A6%E6%9D%A1%E7%8A%B6%E6%80%81"><span class="toc-number">7.1.2.</span> <span class="toc-text">查看当前进度条状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E4%B8%BA%E9%9A%90%E8%97%8F"><span class="toc-number">7.1.3.</span> <span class="toc-text">改为隐藏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E4%B8%BA%E6%98%BE%E7%A4%BA"><span class="toc-number">7.1.4.</span> <span class="toc-text">改为显示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Notification%E9%80%9A%E7%9F%A5"><span class="toc-number">8.</span> <span class="toc-text">Notification通知</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E9%80%9A%E7%9F%A5"><span class="toc-number">8.1.</span> <span class="toc-text">发送通知</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E9%80%9A%E7%9F%A5%E7%9A%84%E6%84%8F%E5%9B%BE"><span class="toc-number">8.1.1.</span> <span class="toc-text">添加通知的意图</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAActivity%E7%B1%BB"><span class="toc-number">8.1.1.1.</span> <span class="toc-text">创建一个Activity类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E5%86%8CActivity"><span class="toc-number">8.1.1.2.</span> <span class="toc-text">注册Activity</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E9%80%9A%E7%9F%A5%E6%B7%BB%E5%8A%A0%E6%84%8F%E5%9B%BE"><span class="toc-number">8.1.1.3.</span> <span class="toc-text">为通知添加意图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%96%E6%B6%88%E9%80%9A%E7%9F%A5"><span class="toc-number">8.2.</span> <span class="toc-text">取消通知</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ToolBar%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="toc-number">9.</span> <span class="toc-text">ToolBar导航栏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E8%87%AA%E5%B8%A6%E7%9A%84ActionBar"><span class="toc-number">9.1.</span> <span class="toc-text">清除自带的ActionBar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0ToolBar"><span class="toc-number">9.2.</span> <span class="toc-text">添加ToolBar</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C"><span class="toc-number">9.2.1.</span> <span class="toc-text">点击效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%B1%85%E4%B8%AD%E7%9A%84%E6%A0%87%E9%A2%98"><span class="toc-number">9.2.2.</span> <span class="toc-text">设置居中的标题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AlertDialog%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="toc-number">10.</span> <span class="toc-text">AlertDialog对话框</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%8C%89%E9%92%AE"><span class="toc-number">10.1.</span> <span class="toc-text">添加按钮</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%B7%A6%E4%B8%8B%E8%A7%92%E6%8C%89%E9%92%AE"><span class="toc-number">10.1.1.</span> <span class="toc-text">添加左下角按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%8F%B3%E4%B8%8B%E8%A7%92%E5%B7%A6%E4%BE%A7%E6%8C%89%E9%92%AE"><span class="toc-number">10.1.2.</span> <span class="toc-text">添加右下角左侧按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%8F%B3%E4%B8%8B%E8%A7%92%E5%8F%B3%E4%BE%A7%E6%8C%89%E9%92%AE"><span class="toc-number">10.1.3.</span> <span class="toc-text">添加右下角右侧按钮</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%B8%83%E5%B1%80"><span class="toc-number">10.2.</span> <span class="toc-text">添加布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B8%83%E5%B1%80"><span class="toc-number">10.2.1.</span> <span class="toc-text">创建一个布局</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86dialog-view-xml%E5%B8%83%E5%B1%80%E6%94%BE%E5%88%B0%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="toc-number">10.2.2.</span> <span class="toc-text">将dialog_view.xml布局放到对话框</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PopupWindow%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3"><span class="toc-number">11.</span> <span class="toc-text">PopupWindow弹出窗口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B8%83%E5%B1%80%E7%94%A8%E6%9D%A5%E5%BC%B9%E5%87%BA"><span class="toc-number">11.1.</span> <span class="toc-text">创建一个布局用来弹出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E7%94%A8%E6%9D%A5%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3"><span class="toc-number">11.2.</span> <span class="toc-text">创建一个按钮用来弹出窗口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAPopupWindow"><span class="toc-number">11.3.</span> <span class="toc-text">创建PopupWindow</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AA%97%E5%8F%A3%E6%97%A0%E5%81%8F%E7%A7%BB%EF%BC%8C%E6%98%BE%E7%A4%BA%E5%9C%A8%E6%AD%A3%E4%B8%8B%E6%96%B9"><span class="toc-number">11.3.1.</span> <span class="toc-text">窗口无偏移，显示在正下方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AA%97%E5%8F%A3%E6%9C%89%E5%81%8F%E7%A7%BB"><span class="toc-number">11.3.2.</span> <span class="toc-text">窗口有偏移</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E7%A9%BA%E7%99%BD%E5%A4%84%E9%9A%90%E8%97%8F"><span class="toc-number">11.3.3.</span> <span class="toc-text">点击空白处隐藏</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%97%ADPopupWindow"><span class="toc-number">11.4.</span> <span class="toc-text">关闭PopupWindow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E7%A9%BA%E7%99%BD%E5%A4%84%E9%9A%90%E8%97%8F-1"><span class="toc-number">11.5.</span> <span class="toc-text">点击空白处隐藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF"><span class="toc-number">11.6.</span> <span class="toc-text">设置背景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E6%88%90"><span class="toc-number">12.</span> <span class="toc-text">完成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">13.</span> <span class="toc-text">参考文献</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
